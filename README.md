@@ -1,29 +1,45 @@
-# tailwind-css-test
+Using Tailwind CSS within a vue application
+---
+1. Create the vue application
 
-## Project setup
-```
-npm install
-```
+    ```
+    vue create application-name
+    ```
+    
+2. Install additional dependencies
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+    ```
+    npm install --save-dev tailwindcss autoprefixer
+    ```
+    
+3. Create tailwind config file
 
-### Compiles and minifies for production
-```
-npm run build
-```
+    ```
+    npx tailwind init tailwind.config.js
+    ```
+    
+4. Add the following plugins to postcss.config.js
 
-### Run your tests
-```
-npm run test
-```
+    ```
+    module.exports = {
+      plugins: [
+        require('tailwindcss')('tailwind.config.js'),   // eslint-disable-line
+        require('autoprefixer')(),  // eslint-disable-line
+      ],
+    };
+    ```
+    
+5. Create src/assets/css/tailwind.css file with the following content
 
-### Lints and fixes files
-```
-npm run lint
-```
+    ```
+    @tailwind preflight;
+    @tailwind components;
+    @tailwind utilities;
+    ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+6. Import tailwind.css in main.js
+
+    ```
+    // eslint-disable-next-line import/no-unresolved
+    import '@/assets/css/tailwind.css';
+    ```
