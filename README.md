@@ -1,4 +1,9 @@
-Using Tailwind CSS within a vue application
+Links
+---
+[Tailwind Docs](https://tailwindcss.com/docs/)
+
+
+Adding Tailwind CSS to a vue application
 ---
 1. Create the vue application
 
